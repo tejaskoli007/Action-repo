@@ -2,20 +2,17 @@ name: Trigger Webhook
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   send-webhook:
     runs-on: ubuntu-latest
-    steps:
-      - name: Send Webhook to Local Server (via ngrok)
-        run: |
-          curl -X POST ${{ secrets.WEBHOOK_URL }} \
-            -H "Content-Type: application/json" \
-            -d '{
-              "repository": {"full_name": "Action-repo"},
-              "action": "push",
-              "sender": {"login": "tejaskoli007"}
-            }'
 
+    steps:
+      - name: Send webhook to local server
+        env:
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+        run: |
+          echo "Sending webhook to $WEBHOOK_URL"
+          curl -X POST $WEBHOOK_URL \
+            -H "Content-Type: application/json" \
+            -d '{"repository": {"full_name": "test/repo"}, "action": "test_event", "sender": {"login": "tester"}}'
