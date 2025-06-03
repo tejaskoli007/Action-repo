@@ -22,6 +22,5 @@ This repository contains the GitHub Actions workflow configuration to simulate w
 ## Workflow Details
 Triggers on push events.
 Sends a POST request to your webhook endpoint with dummy event data.
-make sure the locally the app.py is working
 # Author
 ## Tejas Koli
