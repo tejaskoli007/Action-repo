@@ -1,7 +1,7 @@
 # Action-Repo
 
 This repository contains the GitHub Actions workflow configuration to simulate webhook events for testing the webhook server.
-This repo aligns with the repo **Webhook-Repo** download it as well.
+This repo aligns with the repo **Webhook-Repo** first have a look in it.
 ## Features
 
 - Includes `.github/workflows/main.yml` which triggers on `push` events or can be manually triggered.
